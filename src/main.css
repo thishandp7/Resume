@@ -1,0 +1,22 @@
+#main {
+  margin: auto;
+  width: 1000px;
+  height: 2000px;
+}
+.hex {
+  position: relative;
+  z-index: 1;
+  left: 50px;
+  top:20px;;
+  padding-top: 0px;
+  float:left;
+}
+
+.header {
+  position: relative;
+  top:60px;
+  background-color: #2d65c1;
+  height: 150px;
+  box-shadow: 1px 1px 2px #888888;
+  border-radius: 3px;
+}
