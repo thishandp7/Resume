@@ -31065,21 +31065,125 @@ var React = require('react');
 var ReactDOM = require('react-dom');
 //var MainPage = require('./Components/MainPage');
 
-class Header extends React.Component{
+class ProfilePicture extends React.Component{
 
-}
+  componentDidMount(){
+    let canvas = ReactDOM.findDOMNode(this.refs.myCanvas);
+    let ctx = canvas.getContext('2d');
 
-class MainPage extends React.Component{
+    ctx.beginPath();
+    ctx.moveTo(60,15);
+    ctx.lineTo(100,35);
+    ctx.stroke();
 
+  }
 
-  render (){
+  render(){
     return(
-      React.createElement("div", null, 
-        React.createElement("h1", null, "Thishan D Pathmanathan")
+      React.createElement("canvas", {ref: "myCanvas", className: "profilePic"})
+    );
+  }
+};
+
+const NamePlate = () => {
+  return(
+    React.createElement("div", {className: "name-Plate"}, 
+      React.createElement("h1", {className: "myName"}, "THISHAN D PATHMANATHAN"), 
+      React.createElement("svg", {width: "800", height: "100"}, 
+        React.createElement("defs", null, 
+        React.createElement("filter", {id: "drop-shadow"}, 
+          React.createElement("feGaussianBlur", {in: "SourceAlpha", stdDeviation: "0.8"}), 
+          React.createElement("feOffset", {dx: ".5", dy: "1", result: "offsetblur"}), 
+          React.createElement("feComposite", {in2: "offsetblur", operator: "in"}), 
+          React.createElement("feMerge", null, 
+            React.createElement("feMergeNode", null), 
+            React.createElement("feMergeNode", {in: "SourceGraphic"})
+          )
+        )
+        ), 
+        React.createElement("polygon", {className: "plate", filter: "url(#drop-shadow)", 
+        points: "85,35 700,35 730,100 725,100 717.5,85 85,85"})
+      ), 
+
+      React.createElement("div", {className: "subTitle"}, 
+        React.createElement("span", {id: "sTitleOne"}, "Software Engineer"), 
+        React.createElement("span", null, React.createElement("i", {className: "fa fa-circle", "aria-hidden": "true"})), 
+        React.createElement("span", {id: "sTitleTwo"}, "Graphic Designer")
+      ), 
+
+      React.createElement("svg", {className: "plate-line", width: "800", height: "160"}, 
+        React.createElement("defs", null, 
+        React.createElement("filter", {id: "drop-shadow"}, 
+          React.createElement("feGaussianBlur", {in: "SourceAlpha", stdDeviation: "0.8"}), 
+          React.createElement("feOffset", {dx: ".5", dy: "1", result: "offsetblur"}), 
+          React.createElement("feComposite", {in2: "offsetblur", operator: "in"}), 
+          React.createElement("feMerge", null, 
+            React.createElement("feMergeNode", null), 
+            React.createElement("feMergeNode", {in: "SourceGraphic"})
+          )
+        )
+        ), 
+        React.createElement("polygon", {filter: "url(#drop-shadow)", 
+        points: "145,40 600,40 620,80 615,80 597,45 145,45"})
+      ), 
+
+      React.createElement("div", {className: "contactInfo"}, 
+        React.createElement("div", {id: "email"}, 
+          React.createElement("i", {className: "fa fa-envelope", "aria-hidden": "true"}), 
+          React.createElement("span", null, "tdpathmanathan@stcloudstate.edu")
+        ), 
+        React.createElement("div", {id: "phone"}, 
+          React.createElement("i", {className: "fa fa-phone", "aria-hidden": "false"}), 
+          React.createElement("span", null, "320.237.6857")
+        )
+      )
+
+    )
+  );
+};
+
+const Hexogon = (props) => {
+    return(
+      React.createElement("svg", {className: "hex", width: "420", height: "420", viewBox: props.dims, xmlns: "http://www.w3.org/2000/svg"}, 
+        React.createElement("defs", null, 
+        React.createElement("filter", {id: "drop-shadow"}, 
+          React.createElement("feGaussianBlur", {in: "SourceAlpha", stdDeviation: "0.8"}), 
+          React.createElement("feOffset", {dx: ".5", dy: "1", result: "offsetblur"}), 
+          React.createElement("feComposite", {in2: "offsetblur", operator: "in"}), 
+          React.createElement("feMerge", null, 
+            React.createElement("feMergeNode", null), 
+            React.createElement("feMergeNode", {in: "SourceGraphic"})
+          )
+        )
+        ), 
+        React.createElement("polygon", {filter: "url(#drop-shadow)", 
+        points: "60,15 100,35 100,80 60,100 20,80 20,35"})
+      )
+    );
+};
+
+class Header extends React.Component{
+  render(){
+    return(
+      React.createElement("div", {className: "header"}, 
+        React.createElement(ProfilePicture, null), 
+        React.createElement(Hexogon, {dims: "0 0 200 200"}), 
+        React.createElement(NamePlate, null)
       )
     );
   }
 }
+
+
+class MainPage extends React.Component{
+  render (){
+    return(
+      React.createElement("div", null, 
+        React.createElement(Header, null)
+      )
+    );
+  }
+};
 
 ReactDOM.render(React.createElement(MainPage, null), document.getElementById('main'));
 },{"jquery":24,"react":183,"react-dom":30}]},{},[184]);

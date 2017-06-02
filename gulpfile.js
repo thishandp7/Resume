@@ -21,7 +21,8 @@ var config = {
     css: [
         'node_modules/bootstrap/dist/css/bootstrap.min.css',
         'node_modules/bootstrap/dist/css/bootstrap-theme.min.css',
-        './src/main.css'
+        './src/main.css',
+        'node_modules/font-awesome/css/font-awesome.min.css',
     ],
     img: './img/*.png'
   }
