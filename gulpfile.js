@@ -21,10 +21,11 @@ var config = {
     css: [
         'node_modules/bootstrap/dist/css/bootstrap.min.css',
         'node_modules/bootstrap/dist/css/bootstrap-theme.min.css',
-        './src/main.css',
-        'node_modules/font-awesome/css/font-awesome.min.css',
+        './src/main.css'
     ],
-    img: './img/*.png'
+    img: ['./img/*.png',
+          './img/*.jpg'
+    ]
   }
 }
 
@@ -58,7 +59,7 @@ gulp.task('js', function(){
   .pipe(connect.reload());
 });
 
-gulp.task('css', function(){
+gulp.task('css', ['js'], function(){
   gulp.src(config.paths.css)
   .pipe(concat('bundle.css'))
   .pipe(gulp.dest(config.paths.dst + '/css'))

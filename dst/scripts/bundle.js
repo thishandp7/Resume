@@ -31071,75 +31071,138 @@ class ProfilePicture extends React.Component{
     let canvas = ReactDOM.findDOMNode(this.refs.myCanvas);
     let ctx = canvas.getContext('2d');
 
+    var c = 2;
+
     ctx.beginPath();
-    ctx.moveTo(60,15);
-    ctx.lineTo(100,35);
+    ctx.moveTo(50 * c,5 * c);
+    ctx.lineTo(90 * c,25 * c);
+    ctx.lineTo(90 * c,70 * c);
+    ctx.lineTo(50 * c,90 * c);
+    ctx.lineTo(10 * c,70 * c);
+    ctx.lineTo(10 * c,25 * c);
+    ctx.closePath();
     ctx.stroke();
+    ctx.clip();
+
+    var img = new Image();
+
+    img.onload = function() {
+      ctx.drawImage(img, 20, 12, 165, 165);
+    }
+    img.src = './img/DP.jpg';
+  }
+
+  render(){
+    return(
+      React.createElement("canvas", {ref: "myCanvas", width: "500", height: "500", className: "profilePic"})
+    );
+  }
+};
+
+class NamePlate extends React.Component {
+
+  loadHeader(){
+    $('.name-Plate').animate({width: "+=800px"});
+
+    $('.myName').delay(200);
+    $('.myName').hide().fadeIn(500).animate({top: "+=30px"}, {"duration":700, "queue": false});
+
+    $('.plate-line').delay(200);
+    $('.plate-line').animate({width: "+=800px"});
+
+    $('.subTitle').delay(100).animate({top: "+=32px"}, "slow");
+    $('#contactInfo-email').delay(200).animate({top: "+=30px"}, "slow");
+    $('#contactInfo-phone').delay(300).animate({top: "+22px"}, "slow");
+  };
+
+  componentDidMount(){
+    this.loadHeader();
+
+
+    var index = 140;
+    var scrollState = 'top';
+
+    $(window).scroll(function(){
+        var scrollPos = $(window).scrollTop();
+
+        if((scrollPos > index) && (scrollState === 'top')){
+          $('#contactInfo-email').stop().animate({top: "-30px"}).delay(250);
+          $('#contactInfo-phone').stop().animate({top: "-30px"});
+          $('.subTitle').animate({top: "32px"});
+          scrollState = 'scrolled';
+        }
+        else if((scrollPos === 0) && (scrollState === 'scrolled')){
+          $('#contactInfo-email').stop().animate({top: "0px"}).delay(250);
+          $('#contactInfo-phone').stop().animate({top: "23px"});
+          $('.subTitle').animate({top: "85px"});
+          scrollState = 'top';
+        }
+
+    });
+
 
   }
 
   render(){
     return(
-      React.createElement("canvas", {ref: "myCanvas", className: "profilePic"})
+      React.createElement("div", {className: "name-Plate"}, 
+        React.createElement("h1", {className: "myName"}, "THISHAN D PATHMANATHAN"), 
+        React.createElement("svg", {width: "800", height: "100"}, 
+          React.createElement("defs", null, 
+          React.createElement("filter", {id: "drop-shadow"}, 
+            React.createElement("feGaussianBlur", {in: "SourceAlpha", stdDeviation: "0.8"}), 
+            React.createElement("feOffset", {dx: ".5", dy: "1", result: "offsetblur"}), 
+            React.createElement("feComposite", {in2: "offsetblur", operator: "in"}), 
+            React.createElement("feMerge", null, 
+              React.createElement("feMergeNode", null), 
+              React.createElement("feMergeNode", {in: "SourceGraphic"})
+            )
+          )
+          ), 
+          React.createElement("polygon", {className: "plate", filter: "url(#drop-shadow)", 
+          points: "85,35 700,35 730,100 725,100 717.5,85 85,85"})
+        ), 
+
+        React.createElement("div", {className: "subTitle"}, 
+          React.createElement("span", {id: "sTitleOne"}, "Software Engineer"), 
+          React.createElement("span", null, React.createElement("i", {className: "fa fa-circle", "aria-hidden": "true"})), 
+          React.createElement("span", {id: "sTitleTwo"}, "Graphic Designer")
+        ), 
+
+        React.createElement("div", {id: "subTitleCover"}
+        ), 
+
+        React.createElement("svg", {className: "plate-line", width: "800", height: "160"}, 
+          React.createElement("defs", null, 
+          React.createElement("filter", {id: "drop-shadow"}, 
+            React.createElement("feGaussianBlur", {in: "SourceAlpha", stdDeviation: "0.8"}), 
+            React.createElement("feOffset", {dx: ".5", dy: "1", result: "offsetblur"}), 
+            React.createElement("feComposite", {in2: "offsetblur", operator: "in"}), 
+            React.createElement("feMerge", null, 
+              React.createElement("feMergeNode", null), 
+              React.createElement("feMergeNode", {in: "SourceGraphic"})
+            )
+          )
+          ), 
+          React.createElement("polygon", {filter: "url(#drop-shadow)", 
+          points: "145,40 600,40 620,80 615,80 597,45 145,45"})
+        ), 
+
+        React.createElement("div", {className: "contactInfo"}, 
+          React.createElement("div", {id: "contactInfo-email", className: "c-email"}, 
+            React.createElement("i", {className: "fa fa-envelope", "aria-hidden": "true"}), 
+            React.createElement("span", null, "tdpathmanathan@stcloudstate.edu")
+          ), 
+          React.createElement("div", {id: "contactInfo-phone", className: "c-phone"}, 
+            React.createElement("i", {className: "fa fa-phone", "aria-hidden": "false"}), 
+            React.createElement("span", null, "320.237.6857")
+          )
+        )
+
+      )
     );
   }
-};
 
-const NamePlate = () => {
-  return(
-    React.createElement("div", {className: "name-Plate"}, 
-      React.createElement("h1", {className: "myName"}, "THISHAN D PATHMANATHAN"), 
-      React.createElement("svg", {width: "800", height: "100"}, 
-        React.createElement("defs", null, 
-        React.createElement("filter", {id: "drop-shadow"}, 
-          React.createElement("feGaussianBlur", {in: "SourceAlpha", stdDeviation: "0.8"}), 
-          React.createElement("feOffset", {dx: ".5", dy: "1", result: "offsetblur"}), 
-          React.createElement("feComposite", {in2: "offsetblur", operator: "in"}), 
-          React.createElement("feMerge", null, 
-            React.createElement("feMergeNode", null), 
-            React.createElement("feMergeNode", {in: "SourceGraphic"})
-          )
-        )
-        ), 
-        React.createElement("polygon", {className: "plate", filter: "url(#drop-shadow)", 
-        points: "85,35 700,35 730,100 725,100 717.5,85 85,85"})
-      ), 
-
-      React.createElement("div", {className: "subTitle"}, 
-        React.createElement("span", {id: "sTitleOne"}, "Software Engineer"), 
-        React.createElement("span", null, React.createElement("i", {className: "fa fa-circle", "aria-hidden": "true"})), 
-        React.createElement("span", {id: "sTitleTwo"}, "Graphic Designer")
-      ), 
-
-      React.createElement("svg", {className: "plate-line", width: "800", height: "160"}, 
-        React.createElement("defs", null, 
-        React.createElement("filter", {id: "drop-shadow"}, 
-          React.createElement("feGaussianBlur", {in: "SourceAlpha", stdDeviation: "0.8"}), 
-          React.createElement("feOffset", {dx: ".5", dy: "1", result: "offsetblur"}), 
-          React.createElement("feComposite", {in2: "offsetblur", operator: "in"}), 
-          React.createElement("feMerge", null, 
-            React.createElement("feMergeNode", null), 
-            React.createElement("feMergeNode", {in: "SourceGraphic"})
-          )
-        )
-        ), 
-        React.createElement("polygon", {filter: "url(#drop-shadow)", 
-        points: "145,40 600,40 620,80 615,80 597,45 145,45"})
-      ), 
-
-      React.createElement("div", {className: "contactInfo"}, 
-        React.createElement("div", {id: "email"}, 
-          React.createElement("i", {className: "fa fa-envelope", "aria-hidden": "true"}), 
-          React.createElement("span", null, "tdpathmanathan@stcloudstate.edu")
-        ), 
-        React.createElement("div", {id: "phone"}, 
-          React.createElement("i", {className: "fa fa-phone", "aria-hidden": "false"}), 
-          React.createElement("span", null, "320.237.6857")
-        )
-      )
-
-    )
-  );
 };
 
 const Hexogon = (props) => {
@@ -31162,13 +31225,26 @@ const Hexogon = (props) => {
     );
 };
 
+class subHeader extends React.Component{
+  render(){
+    return(
+      React.createElement("div", {className: "sub-header"}, 
+        React.createElement("h1", null, "Works!")
+      )
+    );
+  }
+}
+
 class Header extends React.Component{
   render(){
     return(
-      React.createElement("div", {className: "header"}, 
-        React.createElement(ProfilePicture, null), 
-        React.createElement(Hexogon, {dims: "0 0 200 200"}), 
-        React.createElement(NamePlate, null)
+      React.createElement("div", null, 
+        React.createElement("div", {className: "header"}, 
+          React.createElement(ProfilePicture, null), 
+          React.createElement(Hexogon, {dims: "0 0 200 200"}), 
+          React.createElement(NamePlate, null)
+        )
+
       )
     );
   }
@@ -31179,7 +31255,8 @@ class MainPage extends React.Component{
   render (){
     return(
       React.createElement("div", null, 
-        React.createElement(Header, null)
+        React.createElement(Header, null), 
+        React.createElement("subHeader", null)
       )
     );
   }
