@@ -167,8 +167,8 @@ const Hexogon = (props) => {
 class subHeader extends React.Component{
   render(){
     return(
-      <div className="sub-header">
-        <h1>Works!</h1>
+      <div>
+        <h1>works!</h1>
       </div>
     );
   }
@@ -183,7 +183,6 @@ class Header extends React.Component{
           <Hexogon dims={"0 0 200 200"}/>
           <NamePlate />
         </div>
-
       </div>
     );
   }

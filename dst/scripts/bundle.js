@@ -31228,8 +31228,8 @@ const Hexogon = (props) => {
 class subHeader extends React.Component{
   render(){
     return(
-      React.createElement("div", {className: "sub-header"}, 
-        React.createElement("h1", null, "Works!")
+      React.createElement("div", null, 
+        React.createElement("h1", null, "works!")
       )
     );
   }
@@ -31244,7 +31244,6 @@ class Header extends React.Component{
           React.createElement(Hexogon, {dims: "0 0 200 200"}), 
           React.createElement(NamePlate, null)
         )
-
       )
     );
   }
