@@ -30,6 +30,55 @@
   left: 61px;
 }
 
+.p-icon{
+  position: absolute;
+  left: -20px;
+  top: 32px;
+}
+
+.contactInfo-2{
+  position: absolute;
+  color: white;
+  left: 20px;
+  top:10px;
+}
+
+.c-icons{
+  font-size: 36px;
+  position: relative;
+  top: 145px;
+  z-index: 3;
+  width: 1000px;
+  margin: auto;
+}
+
+.c-icons > div > a > i {
+  margin: 5px;
+  font-size: 34px;
+  color:white;
+}
+
+.c-icons > div > a > i:hover {
+  height: 30px;
+  border-radius: 5px;
+  box-shadow: 1px 3px 5px #333333;
+  font-size: 35px;
+}
+
+.c-icons-container{
+  position: relative;
+  left: 800px;
+  width:100px;
+}
+
+.c-icons-fixed{
+  top:5px;
+  position: fixed;
+  width: 1000px;
+  height: 40px;
+  margin: auto;
+}
+
 .plate{
   fill:#437bda;
 }
@@ -48,8 +97,9 @@
   top:0px;
   background-color: #2e65c2;
   width: 1000px;
-  z-index: 1;
+  z-index: -1;
   height: 60px;
+  display: none;
 }
 
 .name-Plate{

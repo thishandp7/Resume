@@ -23,17 +23,21 @@ class ProfilePicture extends React.Component{
     ctx.stroke();
     ctx.clip();
 
-    var img = new Image();
+    var co1 = this.props.coords1;
+    var co2 = this.props.coords2;
+    var co3 = this.props.coords3;
+    var co4 = this.props.coords4;
 
+    var img = new Image();
     img.onload = function() {
       ctx.drawImage(img, 20, 12, 165, 165);
     }
     img.src = './img/DP.jpg';
   }
 
-  render(){
+  render(props){
     return(
-      <canvas ref="myCanvas" width="500" height="500" className="profilePic"></canvas>
+      <canvas ref="myCanvas" width="500" height="500" className="profilePic" style={{width: this.props.size, top: this.props.top, left: this.props.left}}></canvas>
     );
   }
 };
@@ -70,7 +74,7 @@ class NamePlate extends React.Component {
           $('.subTitle').animate({top: "32px"});
           scrollState = 'scrolled';
         }
-        else if((scrollPos === 0) && (scrollState === 'scrolled')){
+        else if((scrollPos < index) && (scrollState === 'scrolled')){
           $('#contactInfo-email').stop().animate({top: "0px"}).delay(250);
           $('#contactInfo-phone').stop().animate({top: "23px"});
           $('.subTitle').animate({top: "85px"});
@@ -164,29 +168,116 @@ const Hexogon = (props) => {
     );
 };
 
-class subHeader extends React.Component{
+class SubHeader extends React.Component{
+
+  componentDidMount(){
+    var index = 170;
+    var scrollState = 'top';
+
+    $(window).scroll(function(){
+        var scrollPos = $(window).scrollTop();
+        if((scrollPos > index) && (scrollState === 'top')){
+          $('.sub-header').show();
+          $('.p-icon').stop().animate({left: "75px"});
+          $('.contactInfo-2').stop().animate({left: "215px"});
+          scrollState = 'scrolled';
+        }
+        else if((scrollPos < index) && (scrollState === 'scrolled')){
+          $('.sub-header').hide();
+          $('.p-icon').stop().animate({left: "-75px"});
+          $('.contactInfo-2').stop().animate({left: "20px"});
+          scrollState = 'top';
+        }
+
+    });
+  }
+
   render(){
     return(
       <div>
-        <h1>works!</h1>
+        <div className="sub-header">
+          <div className="p-icon">
+            <ProfilePicture size={"160px"}/>
+          </div>
+          <div className="contactInfo-2">
+            <div  id="contactInfo-email-2">
+              <i className="fa fa-envelope" aria-hidden="true"></i>
+              <span>tdpathmanathan@stcloudstate.edu</span>
+            </div>
+            <div  id="contactInfo-phone-2">
+              <i className="fa fa-phone" aria-hidden="false"></i>
+              <span>320.237.6857</span>
+            </div>
+          </div>
+        </div>
       </div>
     );
   }
-}
+};
+
+class ContactIcons extends React.Component{
+
+  componentDidMount(){
+    $('.fa-linkedin-square').animate({left: "-40px"}, 'slow');
+    $('.fa-facebook-square').animate({left: "2px"}, 'slow');
+    $('.fa-youtube-square').animate({left: "46px"}, 'slow');
+
+
+    var index = 140;
+    var scrollState = 'top';
+
+    $(window).scroll(function(){
+      var scrollPos = $(window).scrollTop();
+
+
+      if(scrollPos > index && scrollState === 'top'){
+        $('.c-icons').addClass('c-icons-fixed');
+        $('.c-icons-container').stop().animate({left: "735px"});
+        scrollState = 'scrolled';
+      }
+      else if(scrollPos < index && scrollState === 'scrolled'){
+        $('.c-icons').removeClass('c-icons-fixed');
+        $('.c-icons-container').stop().animate({left: "800px"});
+        scrollState = 'top';
+      }
+
+    });
+  }
+
+  render(){
+    return(
+        <div className="c-icons">
+          <div className="c-icons-container">
+            <a href={'#'}>
+              <i className="fa fa-linkedin-square" aria-hidden="false" style={{top:"5px", left: "350px", position: "absolute"}}></i>
+            </a>
+            <a href={'#'}>
+              <i className="fa fa-facebook-square" aria-hidden="false" style={{top:"5px", left: "350px", position: "absolute"}}></i>
+            </a>
+            <a href={'#'}>
+              <i className="fa fa-youtube-square" aria-hidden="false"  style={{top:"5px", left: "350px", position: "absolute"}}></i>
+            </a>
+        </div>
+      </div>
+    );
+  }
+};
 
 class Header extends React.Component{
   render(){
     return(
       <div>
+        <ContactIcons />
         <div className="header">
-          <ProfilePicture />
+          <ProfilePicture size={"500px"}/>
           <Hexogon dims={"0 0 200 200"}/>
           <NamePlate />
+          <SubHeader />
         </div>
       </div>
     );
   }
-}
+};
 
 
 class MainPage extends React.Component{
@@ -194,7 +285,6 @@ class MainPage extends React.Component{
     return(
       <div>
         <Header />
-        <subHeader />
       </div>
     );
   }
