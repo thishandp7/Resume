@@ -48,7 +48,7 @@ var Data = {
          {"line":"Performed follow-ups on validation test for the developed software."},
          {"line":"Maintained/adapted software documentation and artefacts."}
        ],
-       "period": "May 2016 - Present"
+       "period": "May 2016 - May 2017"
      },
      {
        "companyName": "Applied Research & Development Center",

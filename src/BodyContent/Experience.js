@@ -75,7 +75,7 @@ const DateTag = () =>{
   return(
     <div style={{position:"absolute", top:"15px", left: "695px", }}>
       <svg width="225">
-        <polygon points="15,10 190,10 190,35 15,35 0,22" fill="#b9c9ea"/>
+        <polygon points="15,10 195,10 195,35 15,35 0,22" fill="#b9c9ea"/>
       </svg>
     </div>
   );
@@ -124,7 +124,7 @@ class ExperienceList extends React.Component{
                   </div>
                 </div>
                 <div className="ex-gradDate" style={{position:"relative", top:"-25px", left:"-500px", width:"220px"}}>
-                  <h4 style={{position:"absolute", top:"18px", left:"715px", zIndex:'1', width:"220px"}}>{ex.period}</h4>
+                  <h4 style={{position:"absolute", top:"18px", left:"710px", zIndex:'1', width:"220px"}}>{ex.period}</h4>
                   <DateTag />
                 </div>
                 <div className="ex-info" style={{position: "relative", width: "400px", left: "150px"}}>

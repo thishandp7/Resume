@@ -9,8 +9,6 @@ var reactify = require("reactify");
 var source = require("vinyl-source-stream");
 var concat = require("gulp-concat");
 var lint = require("gulp-eslint");
-// var uglify = require("gulp-uglify");
-// var react = require('gulp-react');
 
 var config = {
   port: 9005,
@@ -27,20 +25,9 @@ var config = {
     ],
     img: ['./img/*.png',
           './img/*.jpg'
-    ],
-    MINIFIED_OUT: 'build.min.js'
+    ]
   }
 }
-
-// gulp.task('apply-prod-environment', function(){
-//   process.stdout.write("Setting NODE_ENV to 'production'" + "\n");
-//   process.env.NODE_ENV = 'production';
-//   if (process.env.NODE_ENV != 'production') {
-//     throw new Error("Failed to set NODE_ENV to production!!!!");
-//   } else {
-//     process.stdout.write("Successfully set NODE_ENV to production" + "\n");
-//   }
-// });
 
 gulp.task('connect', function(){
   connect.server({
@@ -71,14 +58,6 @@ gulp.task('js', function(){
   .pipe(gulp.dest(config.paths.dst + '/scripts'))
   .pipe(connect.reload());
 });
-
-// gulp.task('build', function(){
-//   gulp.src(config.paths.js)
-//   .pipe(react())
-//   .pipe(concat(config.paths.MINIFIED_OUT))
-//   .pipe(uglify(config.paths.MINIFIED_OUT))
-//   .pipe(gulp.dest(config.paths.dst));
-// });
 
 gulp.task('css', ['js'], function(){
   gulp.src(config.paths.css)

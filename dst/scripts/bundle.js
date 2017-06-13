@@ -33394,7 +33394,7 @@ var Data = {
          {"line":"Performed follow-ups on validation test for the developed software."},
          {"line":"Maintained/adapted software documentation and artefacts."}
        ],
-       "period": "May 2016 - Present"
+       "period": "May 2016 - May 2017"
      },
      {
        "companyName": "Applied Research & Development Center",
@@ -33838,7 +33838,7 @@ const DateTag = () =>{
   return(
     React.createElement("div", {style: {position:"absolute", top:"15px", left: "695px", }}, 
       React.createElement("svg", {width: "225"}, 
-        React.createElement("polygon", {points: "15,10 190,10 190,35 15,35 0,22", fill: "#b9c9ea"})
+        React.createElement("polygon", {points: "15,10 195,10 195,35 15,35 0,22", fill: "#b9c9ea"})
       )
     )
   );
@@ -33887,7 +33887,7 @@ class ExperienceList extends React.Component{
                   )
                 ), 
                 React.createElement("div", {className: "ex-gradDate", style: {position:"relative", top:"-25px", left:"-500px", width:"220px"}}, 
-                  React.createElement("h4", {style: {position:"absolute", top:"18px", left:"715px", zIndex:'1', width:"220px"}}, ex.period), 
+                  React.createElement("h4", {style: {position:"absolute", top:"18px", left:"710px", zIndex:'1', width:"220px"}}, ex.period), 
                   React.createElement(DateTag, null)
                 ), 
                 React.createElement("div", {className: "ex-info", style: {position: "relative", width: "400px", left: "150px"}}, 
