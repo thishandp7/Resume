@@ -1,7 +1,14 @@
+body{
+  background-color: #e8e8e8;
+  font-family: 'Poiret One', cursive;
+  font-family: 'Comfortaa', cursive;
+  font-family: 'Maven Pro', sans-serif;
+}
+
 #main {
   margin: auto;
-  width: 1000px;
-  height: 2000px;
+  width: 1100px;
+  height: 2690px;
 }
 .hex {
   fill:#437bda;
@@ -36,7 +43,7 @@
   position: relative;
   top: 145px;
   z-index: 3;
-  width: 1000px;
+  width: 1100px;
   margin: auto;
 }
 
@@ -55,15 +62,26 @@
 
 .c-icons-container{
   position: relative;
-  left: 800px;
+  left: 890px;
   width:100px;
+}
+
+.parallelogram{
+  -webkit-transform: skew(30deg);
+  -moz-transform: skew(30deg);
+  transform: skew(30deg);
+}
+
+.parallelogram-gray{
+  -webkit-transform: skew(30deg);
+  -moz-transform: skew(30deg);
+  transform: skew(30deg);
 }
 
 .c-icons-fixed{
   top:5px;
   position: fixed;
-  width: 1000px;
-  height: 40px;
+  width: 1100px;
   margin: auto;
 }
 
@@ -80,11 +98,27 @@
   border-radius: 3px;
 }
 
+.footer{
+  top: 2670px;
+  position: absolute;
+  background-color: #2e65c2;
+  width: 1100px;
+  z-index: -1;
+  height: 25px;
+  color:white;
+}
+
+.footer > span{
+  position: absolute;
+  top:3px;
+  padding-left:20px;
+}
+
 .sub-header{
   position: fixed;
   top:0px;
   background-color: #2e65c2;
-  width: 1000px;
+  width: 1100px;
   z-index: -1;
   height: 60px;
   display: none;
@@ -112,7 +146,7 @@
   color:white;
   position: absolute;
   top:-10px;
-  left: 120px;
+  left: 150px;
   font-size: 40px;;
 }
 
@@ -120,7 +154,7 @@
   color:white;
   position: absolute;
   top:55px;
-  left: 195px;
+  left: 245px;
   font-size: 19px;
   z-index: -1;
   width: 400px;
@@ -176,6 +210,132 @@
 .fa-phone{
   margin-right:10px;
 }
+
+.summeryHex{
+  position: relative;
+  left:-46.5px;
+  top: 49px;
+
+}
+
+.summeryHexUpper{
+  z-index: -2;
+  position: absolute;
+  left:-40px;
+  top:0px;
+  width:40px;
+  height:40px;
+  transform: scale(0);
+  transition: all 0.3s;
+}
+.summeryHexUpper.animate{
+  transform: scale(1);
+}
+
+.educationHexUpper{
+  z-index: -2;
+  position: absolute;
+  left:-40px;
+  top:0px;
+  width:40px;
+  height:40px;
+  transform: scale(0);
+  transition: all 0.3s;
+  }
+
+.educationHexUpper.animate{
+  transform: scale(1);
+}
+
+.skillsHexUpper{
+  z-index: -2;
+  position: absolute;
+  left:-40px;
+  top:0px;
+  width:40px;
+  height:40px;
+  transform: scale(0);
+  transition: all 0.3s;
+  }
+
+.skillsHexUpper.animate{
+  transform: scale(1);
+}
+
+.projectsHexUpper{
+  z-index: -2;
+  position: absolute;
+  left:-40px;
+  top:0px;
+  width:40px;
+  height:40px;
+  transform: scale(0);
+  transition: all 0.3s;
+  }
+
+.projectsHexUpper.animate{
+  transform: scale(1);
+}
+
+.experienceHexUpper{
+  z-index: -2;
+  position: absolute;
+  left:-40px;
+  top:0px;
+  width:40px;
+  height:40px;
+  transform: scale(0);
+  transition: all 0.3s;
+}
+
+.experienceHexUpper.animate{
+  transform: scale(1);
+}
+
+.summery-Icon{
+  position: absolute;
+  font-size: 24px;
+  top:3px;
+  left:10px;
+  z-index: 1;
+  color:white;
+  width:1px;
+}
+.summeryUpper{
+  top: 65px;
+  left:50px;
+  position:relative;
+}
+.summery{
+  margin-top: 15px;
+  margin-bottom: 15px;
+  position:relative;
+  background-color: white;
+  width:300px;
+  height: 70px;
+  top: -10px;
+  left:6px;
+  padding: 1px 10px 20px 5px;
+  box-shadow: 1px 1px 2px #888888;
+  border-radius: 3px;
+  z-index: -2;
+}
+
+.summery > .summery-header{
+  position: absolute;
+  top:-10px;
+  left: 160px;
+  opacity: 0;
+}
+
+.summery > .summery-content{
+  position: absolute;
+  top: 65px;
+  padding-left: 20px;
+  width: 1020px;
+}
+
+
 
 /*animations only!*/
 

@@ -9,6 +9,7 @@
   "author": "Thishan D Pathmanathan",
   "license": "ISC",
   "dependencies": {
+    "babel-eslint": "^7.2.3",
     "bootstrap": "^3.3.7",
     "browserify": "^14.3.0",
     "font-awesome": "^4.7.0",
@@ -19,9 +20,11 @@
     "gulp-open": "^2.0.0",
     "gulp-webserver": "^0.9.1",
     "jquery": "^3.2.1",
+    "jquery-ui": "^1.12.1",
     "react": "^15.5.4",
     "react-dom": "^15.5.4",
     "reactify": "^1.1.1",
+    "underscore": "^1.8.3",
     "vinyl-source-stream": "^1.1.0"
   }
 }
