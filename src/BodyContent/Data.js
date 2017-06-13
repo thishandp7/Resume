@@ -34,15 +34,19 @@ var Data = {
        "location": "Saint Cloud",
        "title": "Software Engineer - Intern",
        "description": [
-         {"line":"Play an advising role in the creation of software designs and perform follow-up of other SW development and test task within your experience scope."},
-         {"line":"Perform an intake and acceptance on SW development tasks and describe/adapt the technical design for the development tasks."},
-         {"line":"Develop the requested requirements following the agreed procedures & conventions."},
-         {"line":"Take up responsibility in SW smaller software projects and guide these from a planning, progress, reporting and communication perspective."},
-         {"line":"Execute the quality procedures on SW development and deliver high quality tools with regards to SW layout, performance, output and usability."},
-         {"line":"Give support on developed software and software within your knowledge domain."},
-         {"line":"Take up responsibility on in development SW & unit tests."},
-         {"line":"Perform follow-up on validation test for the developed software."},
-         {"line":"Maintain/adapt SW documentation and artefacts."}
+         {"line":"Involved in design and development of the projects with MVC architecture"},
+         {"line":"Used Javascript, jQuery and knockoutJs for front-end development"},
+         {"line":"Involved in unit testing by using MSTest tool and MOQ library"},
+         {"line":"Worked in Agile scrum development process"},
+         {"line":"Played an advising role in the creation of software designs and perform follow-up of other software development and test tasks."},
+         {"line":"Performed an intake and acceptance on software development tasks and describe/adapt the technical design for the development tasks."},
+         {"line":"Developed the requested requirements following the agreed procedures & conventions."},
+         {"line":"Take up responsibility in software smaller software projects and guide these from a planning, progress, reporting and communication perspective."},
+         {"line":"Executed the quality procedures on software development and delivered high quality tools with regards to software layout, performance, output and usability."},
+         {"line":"Gave support on developed software and software within my knowledge domain."},
+         {"line":"Took up responsibility on in development software & unit tests."},
+         {"line":"Performed follow-ups on validation test for the developed software."},
+         {"line":"Maintained/adapted software documentation and artefacts."}
        ],
        "period": "May 2016 - Present"
      },

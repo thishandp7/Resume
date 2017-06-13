@@ -182,7 +182,7 @@ class Experience extends React.Component{
         $('.experience').hide().fadeIn(150).animate({width: "1043px"});
         $('.experience-header').delay(150).animate({left:"5px", opacity: 1});
         $('.experienceLineDesign').delay(400).animate({left:"790px", opacity: 1});
-        $('.experience').animate({height: "745px"});
+        $('.experience').animate({height: "845px"});
         $('.experience-content').delay(400).fadeIn(500);
         show = false;
         hide = true;

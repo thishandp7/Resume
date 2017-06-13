@@ -33380,15 +33380,19 @@ var Data = {
        "location": "Saint Cloud",
        "title": "Software Engineer - Intern",
        "description": [
-         {"line":"Play an advising role in the creation of software designs and perform follow-up of other SW development and test task within your experience scope."},
-         {"line":"Perform an intake and acceptance on SW development tasks and describe/adapt the technical design for the development tasks."},
-         {"line":"Develop the requested requirements following the agreed procedures & conventions."},
-         {"line":"Take up responsibility in SW smaller software projects and guide these from a planning, progress, reporting and communication perspective."},
-         {"line":"Execute the quality procedures on SW development and deliver high quality tools with regards to SW layout, performance, output and usability."},
-         {"line":"Give support on developed software and software within your knowledge domain."},
-         {"line":"Take up responsibility on in development SW & unit tests."},
-         {"line":"Perform follow-up on validation test for the developed software."},
-         {"line":"Maintain/adapt SW documentation and artefacts."}
+         {"line":"Involved in design and development of the projects with MVC architecture"},
+         {"line":"Used Javascript, jQuery and knockoutJs for front-end development"},
+         {"line":"Involved in unit testing by using MSTest tool and MOQ library"},
+         {"line":"Worked in Agile scrum development process"},
+         {"line":"Played an advising role in the creation of software designs and perform follow-up of other software development and test tasks."},
+         {"line":"Performed an intake and acceptance on software development tasks and describe/adapt the technical design for the development tasks."},
+         {"line":"Developed the requested requirements following the agreed procedures & conventions."},
+         {"line":"Take up responsibility in software smaller software projects and guide these from a planning, progress, reporting and communication perspective."},
+         {"line":"Executed the quality procedures on software development and delivered high quality tools with regards to software layout, performance, output and usability."},
+         {"line":"Gave support on developed software and software within my knowledge domain."},
+         {"line":"Took up responsibility on in development software & unit tests."},
+         {"line":"Performed follow-ups on validation test for the developed software."},
+         {"line":"Maintained/adapted software documentation and artefacts."}
        ],
        "period": "May 2016 - Present"
      },
@@ -33941,7 +33945,7 @@ class Experience extends React.Component{
         $('.experience').hide().fadeIn(150).animate({width: "1043px"});
         $('.experience-header').delay(150).animate({left:"5px", opacity: 1});
         $('.experienceLineDesign').delay(400).animate({left:"790px", opacity: 1});
-        $('.experience').animate({height: "745px"});
+        $('.experience').animate({height: "845px"});
         $('.experience-content').delay(400).fadeIn(500);
         show = false;
         hide = true;
@@ -34099,7 +34103,7 @@ class ProjectList extends React.Component{
     var hideList = false;
     var scrollTopList;
     var winHeightList;
-    var poPosList = 1540;
+    var poPosList = 1640;
 
     $(window).scroll(function(){
 
@@ -34171,7 +34175,7 @@ class Projects extends React.Component{
     var hide = false;
     var scrollTop;
     var winHeight;
-    var poPos = 1540;
+    var poPos = 1640;
 
     $('.projects-content').hide();
 
@@ -34333,7 +34337,7 @@ class SkillsList extends React.Component{
     var hideList = false;
     var scrollTopList;
     var winHeightList;
-    var skiPosList = 1755;
+    var skiPosList = 1855;
 
     $(window).scroll(function(){
 
@@ -34342,13 +34346,15 @@ class SkillsList extends React.Component{
 
       if((scrollTopList + winHeightList) > skiPosList && showList){
         $('.ski-info').delay(550).animate({left: "0px"});
-        $('.levels').delay(550).animate({left: "250px"});
+        //$('.levels').hide().delay(1100).animate({left: "250px"}).fadeIn(100);
+        $('.levels').delay(700).animate({left: "250px"});
         showList = false;
         hideList = true;
       }
       else if((scrollTopList + winHeightList) < skiPosList && hideList){
         $('.ski-info').delay(550).animate({left: "400px"});
-        $('.levels').delay(550).animate({left: "-500px"});
+        $('.levels').delay(700).animate({left: "500px"});
+        //$('.levels').hide().animate({left: "500px"});;
         hideList = false;
         showList = true;
       }
@@ -34369,7 +34375,7 @@ class SkillsList extends React.Component{
             ), 
             React.createElement("div", {className: "ski-info", style: {position: "relative", width: "600px", left: "50px"}}, 
               React.createElement("h4", null, ski.skill), 
-              React.createElement("div", {className: "levels", style: {position: "absolute", width: "600px", top:"0px", left: "0px"}}, 
+              React.createElement("div", {className: "levels", style: {position: "absolute", width: "600px", top:"0px", left: "500px"}}, 
                 React.createElement("div", null, 
                   _.range(ski.skillLevel).map( j =>
                     React.createElement("div", {key: j, style: {float:"left"}}, 
@@ -34415,7 +34421,7 @@ class Skills extends React.Component{
     var hide = false;
     var scrollTop;
     var winHeight;
-    var skPos = 1755;
+    var skPos = 1855;
 
     $('.skills-content').hide();
 
@@ -34495,10 +34501,10 @@ class Summery extends React.Component{
 
     $('.summeryHexUpper').addClass('animate');
     $('.summery').hide().fadeIn(100).animate({width: "1043px"});
-    $('.summery-header').delay(650).animate({left:"5px", opacity: 1});
-    $('.summeryLineDesign').delay(650).animate({left:"790px", opacity: 1});
+    $('.summery-header').delay(250).animate({left:"5px", opacity: 1});
+    $('.summeryLineDesign').delay(250).animate({left:"790px", opacity: 1});
     $('.summery').animate({height: "165px"});
-    $('.summery-content').hide().delay(950).fadeIn(500);
+    $('.summery-content').hide().delay(350).fadeIn(500);
 
 
   };

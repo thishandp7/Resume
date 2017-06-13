@@ -100,7 +100,7 @@ class SkillsList extends React.Component{
     var hideList = false;
     var scrollTopList;
     var winHeightList;
-    var skiPosList = 1755;
+    var skiPosList = 1855;
 
     $(window).scroll(function(){
 
@@ -109,13 +109,15 @@ class SkillsList extends React.Component{
 
       if((scrollTopList + winHeightList) > skiPosList && showList){
         $('.ski-info').delay(550).animate({left: "0px"});
-        $('.levels').delay(550).animate({left: "250px"});
+        //$('.levels').hide().delay(1100).animate({left: "250px"}).fadeIn(100);
+        $('.levels').delay(700).animate({left: "250px"});
         showList = false;
         hideList = true;
       }
       else if((scrollTopList + winHeightList) < skiPosList && hideList){
         $('.ski-info').delay(550).animate({left: "400px"});
-        $('.levels').delay(550).animate({left: "-500px"});
+        $('.levels').delay(700).animate({left: "500px"});
+        //$('.levels').hide().animate({left: "500px"});;
         hideList = false;
         showList = true;
       }
@@ -136,7 +138,7 @@ class SkillsList extends React.Component{
             </div>
             <div className="ski-info" style={{position: "relative", width: "600px", left: "50px"}}>
               <h4>{ski.skill}</h4>
-              <div className="levels" style={{position: "absolute", width: "600px", top:"0px", left: "0px"}}>
+              <div className="levels" style={{position: "absolute", width: "600px", top:"0px", left: "500px"}}>
                 <div>{
                   _.range(ski.skillLevel).map( j =>
                     <div key={j} style={{float:"left"}}>
@@ -182,7 +184,7 @@ class Skills extends React.Component{
     var hide = false;
     var scrollTop;
     var winHeight;
-    var skPos = 1755;
+    var skPos = 1855;
 
     $('.skills-content').hide();
 

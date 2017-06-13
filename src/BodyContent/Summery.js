@@ -18,10 +18,10 @@ class Summery extends React.Component{
 
     $('.summeryHexUpper').addClass('animate');
     $('.summery').hide().fadeIn(100).animate({width: "1043px"});
-    $('.summery-header').delay(650).animate({left:"5px", opacity: 1});
-    $('.summeryLineDesign').delay(650).animate({left:"790px", opacity: 1});
+    $('.summery-header').delay(250).animate({left:"5px", opacity: 1});
+    $('.summeryLineDesign').delay(250).animate({left:"790px", opacity: 1});
     $('.summery').animate({height: "165px"});
-    $('.summery-content').hide().delay(950).fadeIn(500);
+    $('.summery-content').hide().delay(350).fadeIn(500);
 
 
   };

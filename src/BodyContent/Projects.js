@@ -89,7 +89,7 @@ class ProjectList extends React.Component{
     var hideList = false;
     var scrollTopList;
     var winHeightList;
-    var poPosList = 1540;
+    var poPosList = 1640;
 
     $(window).scroll(function(){
 
@@ -161,7 +161,7 @@ class Projects extends React.Component{
     var hide = false;
     var scrollTop;
     var winHeight;
-    var poPos = 1540;
+    var poPos = 1640;
 
     $('.projects-content').hide();
 
