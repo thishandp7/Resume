@@ -54,7 +54,7 @@ body{
   font-size: 36px;
   position: relative;
   top: 145px;
-  z-index: 3;
+  z-index: 11;
   width: 1100px;
   margin: auto;
 }
@@ -66,7 +66,7 @@ body{
 }
 
 .c-icons > div > a > i:hover {
-  height: 30px;
+  height: 32px;
   border-radius: 5px;
   box-shadow: 1px 3px 5px #333333;
   font-size: 35px;
@@ -90,6 +90,7 @@ body{
   transform: skew(30deg);
 }
 
+
 .c-icons-fixed{
   top:5px;
   position: fixed;
@@ -101,6 +102,11 @@ body{
   fill:#437bda;
 }
 
+.upperHeader{
+  position: absolute;
+  z-index: 999;
+}
+
 .header {
   position: relative;
   top:50px;
@@ -108,10 +114,11 @@ body{
   height: 170px;
   box-shadow: 1px 1px 2px #888888;
   border-radius: 3px;
+  z-index: 10;
 }
 
 .footer{
-  top: 2770px;
+  top: 3650px;
   position: absolute;
   background-color: #2e65c2;
   width: 1100px;
@@ -126,12 +133,18 @@ body{
   padding-left:20px;
 }
 
+.repobutton > a{
+  position:relative;
+  z-index: 3;
+  top:-20px;
+}
+
 .sub-header{
   position: fixed;
   top:0px;
   background-color: #2e65c2;
   width: 1100px;
-  z-index: -1;
+  z-index: 5;
   height: 60px;
   display: none;
 }
@@ -223,14 +236,14 @@ body{
   margin-right:10px;
 }
 
-.summeryHex{
+.summaryHex{
   position: relative;
   left:-46.5px;
   top: 49px;
 
 }
 
-.summeryHexUpper{
+.summaryHexUpper{
   z-index: -2;
   position: absolute;
   left:-40px;
@@ -240,7 +253,7 @@ body{
   transform: scale(0);
   transition: all 0.3s;
 }
-.summeryHexUpper.animate{
+.summaryHexUpper.animate{
   transform: scale(1);
 }
 
@@ -304,7 +317,7 @@ body{
   transform: scale(1);
 }
 
-.summery-Icon{
+.summary-Icon{
   position: absolute;
   font-size: 24px;
   top:3px;
@@ -313,12 +326,12 @@ body{
   color:white;
   width:1px;
 }
-.summeryUpper{
+.summaryUpper{
   top: 65px;
   left:50px;
   position:relative;
 }
-.summery{
+.summary{
   margin-top: 15px;
   margin-bottom: 15px;
   position:relative;
@@ -333,14 +346,14 @@ body{
   z-index: -2;
 }
 
-.summery > .summery-header{
+.summary > .summary-header{
   position: absolute;
   top:-10px;
   left: 160px;
   opacity: 0;
 }
 
-.summery > .summery-content{
+.summary > .summary-content{
   position: absolute;
   top: 65px;
   padding-left: 20px;
